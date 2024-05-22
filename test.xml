@@ -1,0 +1,12 @@
+<test>
+<url>google.com</url>
+<data>
+</data>
+    <steps>
+        <step>
+            <action>goTO</action>
+
+        </step>
+    </steps>
+</test>
+</test>

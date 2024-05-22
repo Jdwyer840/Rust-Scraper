@@ -1,3 +1,4 @@
+
 #[macro_use] extern crate rocket;
 
 use rocket::{serde::json::Json, post, routes, launch, Rocket};
@@ -10,7 +11,14 @@ use std::ffi::c_void;
 use std::fmt;
 use std::ptr::write;
 use scraper::selector::ToCss;
+use fantoccini::{Client, ClientBuilder, Locator};
 
+mod birdup;
+mod xml_messing_around;
+
+use birdup::let_testing_stuff;
+
+use xml_messing_around::test_xml_stuff;
 
 #[derive(Debug, Deserialize)]
 struct ScraperRequest {
@@ -82,9 +90,16 @@ async fn scrape_data_at_url(url: &str, selector_str: &str) -> Result<Vec<String>
     Ok(headers)
 }
 
-#[launch]
-fn rocket() -> Rocket<rocket::Build> {
-    rocket::build().mount("/", routes![scrape])
+// #[launch]
+// fn rocket() -> Rocket<rocket::Build> {
+//     rocket::build().mount("/", routes![scrape])
+// }
+
+
+#[tokio::main]
+async fn main() {
+    test_xml_stuff();
+    let_testing_stuff().await.expect("FUCK OH SHIT");
 }
 
 
