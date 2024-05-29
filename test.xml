@@ -1,12 +1,13 @@
-<test>
-<url>google.com</url>
+<xmlTest>
+
 <data>
+<url>google.com</url>
 </data>
     <steps>
         <step>
             <action>goTO</action>
+            <url></url>
 
         </step>
     </steps>
-</test>
-</test>
+</xmlTest>

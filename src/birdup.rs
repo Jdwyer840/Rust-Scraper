@@ -18,7 +18,7 @@ pub async fn let_testing_stuff() -> Result<(), fantoccini::error::CmdError> {
     // c.wait().on("#mw-content-text .mw-content-ltr.mw-parser-output");
 
     let results_element = c.find(Locator::Css("#mw-content-text .mw-content-ltr.mw-parser-output")).await?;
-    let results_html = results_element.html(false).await?;
+    let results_html = results_element.html(true).await?;
 
     let document = Html::parse_document(&results_html);
     let selector = Selector::parse("p").unwrap();

@@ -14,3 +14,6 @@ serde = { version = "1.0.199", features = ["derive"] }
 fantoccini = "0.19.3"
 serde_derive = "1.0"
 serde-xml-rs = "0.6.0"
+anyhow = "1.0.86"
+thiserror = "1.0.61"
+toml = "0.8.12"

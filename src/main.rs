@@ -13,6 +13,12 @@ use std::ptr::write;
 use scraper::selector::ToCss;
 use fantoccini::{Client, ClientBuilder, Locator};
 
+
+mod code_generator;
+mod config;
+mod xml_parsing;
+
+
 mod birdup;
 mod xml_messing_around;
 
@@ -37,6 +43,7 @@ struct ResponseData {
 enum ScraperError {
     HttpRequestError(ReqwestError),
     ParseError(String),
+
 }
 
 // Implements the display for the custom errors
